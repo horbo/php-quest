@@ -1,0 +1,90 @@
+@charset "UTF-8";
+@import "variables";
+
+#CalendarDiv {
+  visibility: visible !important;
+  background-color: transparent !important;
+
+  &:after {
+    display: block;
+    width: 153px;
+    height: 52px;
+    content: ' ';
+
+    background-image: $image;
+  }
+}
+
+.hidden {
+  color: transparent;
+
+  &:hover {
+    color: transparent;
+  }
+
+  &:hover::before {
+    text-decoration: $hoverDecoration;
+  }
+
+  &::before {
+    color: $normalLinkColor;
+  }
+}
+
+img[alt=PHPTask] {
+  display: none;
+}
+
+/* Aktualne Questy */
+a[href="#{$actualSelector}"] {
+  @extend .hidden;
+
+  &::before {
+    content: $actualText;
+  }
+}
+
+/* Moje Questy */
+a[href="#{$mySelector}"] {
+  @extend .hidden;
+
+  &::before {
+    content: $myText;
+  }
+}
+
+/* Ukończone questy */
+a[href="#{$doneSelector}"] {
+  @extend .hidden;
+
+  &::before {
+    content: $doneText;
+  }
+}
+
+/* Rozpocznij quest */
+a[href="#{$newSelector}"] {
+  @extend .hidden;
+
+  &::before {
+    content: $newText;
+  }
+}
+
+/* Zapytaj w tawernie */
+a[href="#{$searchSelector}"] {
+  @extend .hidden;
+
+  &::before {
+    content: $searchText;
+  }
+}
+
+/* Zwoje */
+a[href="#{$notesSelector}"] {
+  @extend .hidden;
+
+  &::before {
+    content: $notesText;
+  }
+}

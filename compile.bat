@@ -1,0 +1,1 @@
+compass compile --no-line-comments --sass-dir "src" --css-dir "bin"
