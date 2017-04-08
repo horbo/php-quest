@@ -35,56 +35,14 @@ img[alt=PHPTask] {
   display: none;
 }
 
-/* Aktualne Questy */
-a[href="#{$actualSelector}"] {
-  @extend .hidden;
+@each $selector in $allSelectors {
+  $i: index($allSelectors, $selector);
 
-  &::before {
-    content: $actualText;
-  }
-}
+  a[href="#{$selector}"] {
+    @extend .hidden;
 
-/* Moje Questy */
-a[href="#{$mySelector}"] {
-  @extend .hidden;
-
-  &::before {
-    content: $myText;
-  }
-}
-
-/* Ukończone questy */
-a[href="#{$doneSelector}"] {
-  @extend .hidden;
-
-  &::before {
-    content: $doneText;
-  }
-}
-
-/* Rozpocznij quest */
-a[href="#{$newSelector}"] {
-  @extend .hidden;
-
-  &::before {
-    content: $newText;
-  }
-}
-
-/* Zapytaj w tawernie */
-a[href="#{$searchSelector}"] {
-  @extend .hidden;
-
-  &::before {
-    content: $searchText;
-  }
-}
-
-/* Zwoje */
-a[href="#{$notesSelector}"] {
-  @extend .hidden;
-
-  &::before {
-    content: $notesText;
+    &::before {
+      content: nth($allTexts, $i);
+    }
   }
 }
