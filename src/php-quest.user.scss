@@ -1,18 +1,11 @@
 @charset "UTF-8";
 @import "variables";
 
-#CalendarDiv {
-  visibility: visible !important;
-  background-color: transparent !important;
-
-  &:after {
-    display: block;
-    width: 153px;
-    height: 52px;
-    content: ' ';
-
-    background-image: $image;
-  }
+img[alt="PHPTask"] {
+  width: 0 !important;
+  height: 0 !important;
+  background: $image;
+  padding: 25px 75px;
 }
 
 .hidden {
@@ -29,10 +22,6 @@
   &::before {
     color: $normalLinkColor;
   }
-}
-
-img[alt=PHPTask] {
-  display: none;
 }
 
 @each $selector in $allSelectors {
