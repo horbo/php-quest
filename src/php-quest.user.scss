@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @import "variables";
 
-img[alt="PHPTask"] {
+img[src="templates/phptask.gif"] {
   width: 0 !important;
   height: 0 !important;
   background: $image;
@@ -24,10 +24,10 @@ img[alt="PHPTask"] {
   }
 }
 
-@each $selector in $allSelectors {
-  $i: index($allSelectors, $selector);
+@for $i from 1 through length($allSelectors) {
 
-  a[href="#{$selector}"] {
+
+  a[href="#{nth($allSelectors, $i)}"] {
     @extend .hidden;
 
     &::before {
