@@ -9,7 +9,7 @@ $newText: 'Rozpocznij Quest';
 $searchText: 'Zapytaj w tawernie';
 $notesText: 'Zwoje';
 
-$normalLinkColor: blue;
+$normalLinkColor: #3a271f;
 $hoverDecoration: underline;
 
 $currentSelector: "index.php?action=tasklist&caller=menu";
@@ -21,3 +21,10 @@ $notesSelector: "index.php?action=notepad";
 
 $allSelectors: $currentSelector $mySelector $doneSelector $newSelector $searchSelector $notesSelector;
 $allTexts: $currentText $myText $doneText $newText $searchText $notesText;
+
+$sword: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA60lEQVRYw+WVIRLCMBBFXxgkhgMw2IJE1DAIToDqBXoAdB22U4nDVGB7hzpML0Dv0QMEVRGmDIVkyqaszMS8tz8/ioEmiiLddT7hx6OGIs/zHIC6rgHIskyGgenQ5EEQjDwD78jjOAagKAo1LgOfko8nA9+Sizag+1iyJZdvIE1TAJIkMe66IvfiFWiAqqoACMMQgKZpnJCLMfDxb+iK3Ksm7MyCqzaVm4HDeqEBlvOZQd6aKMuy7QltY0JeBlryzW4PwOlyfb5r/BWvGtMrAwbRcbsC4Hy79yXSNq9CjgHbXXrbA6pjh/9l4AHezHqpNCoeCQAAAABJRU5ErkJggg==');
+
+$backgroundColor: #e2cba2;
+$headerBackgroundColor: #3a271f;
+
+$backgroundImage: url("https://i.ytimg.com/vi/T6Q-pYeEEPE/maxresdefault.jpg");
