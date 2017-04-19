@@ -1,37 +1,161 @@
+@import url('https://fonts.googleapis.com/css?family=MedievalSharp');
 @charset "UTF-8";
 @import "variables";
 
-img[src="templates/phptask.gif"] {
-  width: 0 !important;
-  height: 0 !important;
-  background: $image;
-  padding: 25px 75px;
-}
+/*
 
-.hidden {
-  color: transparent;
+__________________________
+| Header image | Top bar |
+--------------------------
+| Left Menu    | Content |
+--------------------------
 
-  &:hover {
-    color: transparent;
-  }
+*/
 
-  &:hover::before {
-    text-decoration: $hoverDecoration;
-  }
+body.phptask {
 
-  &::before {
-    color: $normalLinkColor;
-  }
-}
+    background-color: transparent;
+    background-image: $backgroundImage;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-@for $i from 1 through length($allSelectors) {
-
-
-  a[href="#{nth($allSelectors, $i)}"] {
-    @extend .hidden;
-
-    &::before {
-      content: nth($allTexts, $i);
+    * {
+        font-family: 'MedievalSharp', cursive;
+        font-size: 16px;
     }
-  }
+
+    a {
+        color: $normalLinkColor !important;
+    }
+  
+    // === Header image ===
+    img[src="templates/phptask.gif"] {
+        width: 0 !important;
+        height: 0 !important;
+        background: $image;
+        padding: 25px 75px;
+    }
+  
+  
+    // === Left menu ===
+    .hidden {
+        color: transparent !important;
+  
+        &:hover {
+            color: transparent !important;
+        }
+  
+        &:hover::before {
+            text-decoration: $hoverDecoration;
+        }
+  
+        &::before {
+            color: $normalLinkColor;
+        }
+    }
+  
+    @for $i from 1 through length($allSelectors) {
+        a[href="#{nth($allSelectors, $i)}"] {
+            @extend .hidden;
+  
+            &::before {
+                content: nth($allTexts, $i);
+            }
+        }
+    }
+  
+    .NavSelectedRound, .Round {  
+        background-image: $sword;
+        background-repeat: no-repeat;
+        background-size: 16px 16px;
+        width: 16px;
+        margin: 5px;
+        border-radius: 3px;
+    }
+
+    // === Top bar ===
+    table > tbody > tr:nth-child(1) > td > table {
+        color: #fff; 
+
+        a {
+                color: #fff !important;
+        }
+    }
+  
+    // Various backgrounds
+    table > tbody > tr:nth-child(2) > td:first-child > table > tbody > tr > td,
+    table > tbody > tr:nth-child(2) > td > table > tbody > tr > td,
+    table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > table > tbody > tr > td,
+    .NavSelectedRound,
+    .NavSelected,
+    .ContentTable,
+    .ContentTableTL,
+    .ContentTableBL,
+    form[name="Criteria"] {
+        background-color: $backgroundColor;
+    }
+  
+    table > tbody > tr:nth-child(2) > td:first-child > table > tbody > tr:first-child > td {
+        background-color: transparent;
+    }
+  
+    table > tbody > tr:nth-child(2) {
+        > td > table > tbody > tr > td > div {
+            > div > h3, // Task view - header,
+            > table > tbody > tr > td > table > tbody > tr:first-child > td { // Do zrobienia/czas pracy - header
+                background-color: $headerBackgroundColor !important;
+                color: #fff;
+                padding: 5px;
+                font-weight: normal !important;
+
+                a {
+                    color: #fff !important;
+                }
+            }
+        }
+    
+        // "Nowe zgłoszenie"
+        > td > table > tbody > tr > td > table > tbody > tr > td > div {
+            background-color: transparent !important;
+        }
+  
+        > td > table > tbody > tr > td > div > table > tbody > tr > td > table {
+            // Do zrobienia/czas pracy - hide header images
+            background-image: none !important;
+            padding: 0 !important;
+
+            > tbody > tr:nth-child(2) > td:first-child {
+                border: 3px solid $headerBackgroundColor !important;
+            }
+
+            a {
+                color: #fff !important;
+            }
+        }
+    }
+
+
+    // Agile board
+    .Tasklist {
+        background-color: transparent
+    }
+
+    // Misc
+    font {
+        h1 {
+            color: #000;
+        }
+    }
+
+
+    form[name="taskedit"] {
+        font {
+            background-color: transparent !important;
+        }
+    }
+
+    input, textarea, button, select {
+        background-color: $backgroundColor;
+        border: 1px solid $headerBackgroundColor;
+    }
 }

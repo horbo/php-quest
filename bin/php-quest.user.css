@@ -1,44 +1,125 @@
 @charset "UTF-8";
-img[src="templates/phptask.gif"] {
+@import url("https://fonts.googleapis.com/css?family=MedievalSharp");
+/*
+
+__________________________
+| Header image | Top bar |
+--------------------------
+| Left Menu    | Content |
+--------------------------
+
+*/
+body.phptask {
+  background-color: transparent;
+  background-image: url("https://i.ytimg.com/vi/T6Q-pYeEEPE/maxresdefault.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+body.phptask * {
+  font-family: 'MedievalSharp', cursive;
+  font-size: 16px;
+}
+body.phptask a {
+  color: #3a271f !important;
+}
+body.phptask img[src="templates/phptask.gif"] {
   width: 0 !important;
   height: 0 !important;
   background: url("data:image/gif;base64,R0lGODlhmQA0APcAAAAAAAAM/xsA/yMd/z0c/zss/kEv/1I+/2FX/2Va/3du///LBv/LB//MBv/MB//LCP/MCP/MCf/NCv/MDP/NDf/NDv/NEP/NEf/OEf/OEv/OE//OFP/PFv/OF//PGP/PGv/PG//QGf/QG//QHP/QHv/QIP/SIv/RJf/SJP/SJf/SJv/TJ//SKP/SKf/TKv/TLf/TL//ULP/ULv/UL//UMP/VMf/UMv/VM//UNP/VNf/VN//WNv/WOv/XO//WPP/WPv/XP//YQP/YQv/YRP/YRf/ZRv/YR//ZSP/ZSv/ZTP/aTP/bTv/aT//aUP/aUf/bVv/cU//cVP/cVv/cV//cWf/cW//dXP/dXv/dX//eXf/eX//dYP/eYP/eYf/fYv/eY//fZP/eZf/eZv/fZ//faP/faf/fav/gZ//haf/ga//gbP/gbf/hbv/hb//hcf/hcv/hc//icP/icf/ic//idP/jdf/idv/id//jef/je//jfP/ke//kfP/kfv/lf4eC/4yK/5GG/5OL/peO/6Cc/6ee/6qg/62n/7mx/ry4/r25/766/8e+///kgP/kgf/lgv/kg//lhf/lhv/mhP/mh//liP/miP/nif/miv/mi//njf/nj//ojv/nkP/nkf/nkv/okf/okv/pk//olP/olf/olv/ql//pm//qmP/qmf/qm//rnP/qnv/roP/rov/sof/spP/tpv/sp//sqP/sqf/tqv/trP/trf/trv/urP/ur//vsP/usf/usv/vs//vtP/vt//wtf/wuf/wuv/wvP/xvv/xv//yv//xwP/ywf/ywv/zw//yxP/zxf/yxv/zx//zyf/zyv/zy//0yP/0y//1zf/0zv/0z//00f/10//20v/11P/21P/21f/21v/22P/22f/32v/22//33f/43P/43v/43//44P/44v/44//55f/65//56f/66f/66v/67P/67f/67//87v/78f/78v/88P/88//99f/89v/8+P/9+f//+//9/f/+/P///QAAACH5BAEAAP8ALAAAAACZADQAAAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGBsqEvSnUMaPIEOKZKhogICTJxOMXMmypcRFKGMGMOCyps2b/wjIjDlIZDRephydCnYNp1GRKBEIRBTg5IGPub58aEC1aoMWdJgd3VrR0MkABBWcHIDR1w+qDJpcWuVqkpipVLt840r3oaCTBQh6FQDWYpeqbuwdTJWi6qq6iBUCOklzICKUFd8ZqWpLYTkcVS8lXvlK1sRAjAkSgjyRno2qkBjC21E10maROjBNXPw1gG2ZtnP3XegEsENgVnO9/pisgWyJd2MqX36SYZuqKPw9BFO1ArbhGHsfjwiauffmCqlZ/20EEZxVLNgtXqK6PSKi9/Djy4e/kIpVchFpWC2aXuKsqu3VJV5VPEh0h1Vc3BQPOvtANI8+BMFj0DIQAPiaJlaFIVExVnEgEDR1hChiHd0QhMyIIi4UCxQRVBUDGuIo9IwULFClAheqoDKDKQSRYlUDP8ghpByeccWEVZ1MdIFVyvyTzR5r/FgMQdC8UcaPCTkzxI9WiYIQHVxKUBWPAs3A5Y9+OESbcrrlFpNCGVglzEQoWNUHQcdYhcxBuViFkC8TNOAJQbUwUJUlBoHSgBAFnfMEVWT+08ykR1LFxqSTpuNQd98xl5A7P04zkQ5WfVFQEFUtg5CfBl1D1S4G+f9iFS4EeUPVlAa90ECkA4lR1SazdepdQtz8CM5ESFjlREGVNqDVQSVUddBZayCkRFVAENQKVdoc9B+vAvlKVSgUJYJIIuaaixIg6LaLbkLE/MjORFdYFURBUFT1rEHRUmVQnw3gatCjVW0zUBxUlXJQP7saJG4DpICEkiIQDfOjOxPJYVWBBOVL1b4FkSBtQUX4ixAtVh0mUL0NkGDNQVCA+8/DMleEEiMQafNjOBOpYdUR+OqLkMgmDzQPVQtssAEHHXTgQQghfOCBVWkM1EdVHbxikDn5OFyVKhLzhfNDoFoFzURbWPVE0B8PPfJAv/zIxNx0L2H3Ekoo0cZA0Pz/OMQvDJFR1SlhCzD2Qw/IOVEUVqXZsdAHjYB0QaJQBcJEZ3AphC4KpTF42AEc7pB+VQ0qERBWDcO2swhJ3sADBUFCVQkU4XGmEMYg5DNVhH+E0iER+WGVGBMFWtU9q4NMEAhUUVAQmFQhP1EwZnJ5x0HP8T5bm7i12ZRC1ljlg0TVWKWFQR6zfhBcFsReleoVsRKD9Qa58blEnAr7pkIwWIVORJxQXPIQMrUGZKAgo6jKGRjSNYWIIgQ/Uh70GtA77uhvOQuBhVUyERFSUQVoBpEC5AwCFwcUJF5VUcdCxDCHgdBCQgWZR5SqMoWC2OF+EpmPDuXDkClUBQcQmYZV/6RxkDBUhRgIgSBV8EGQfoiJKjVMCDwaEI2BJME1B3GEiwpiO+0NZxxPbIBmHJIsqjwCIXCoCi0IWJV6FMQ+VXHcQb5wAoIkYQcJuQFVRFCQPFTlExdJBEcIgRFdDLEhlaOKGhJSiqqQB33+K4jFrAKHg9ShAZWwYwO6dZDMNWB8BAkgVfJAEK09pCRN4UsAVGKRWlTFBedYyH+oYqosVUUE1xkINozAmqoEwyBW+BEN/CAMXuCCEiIzQkGS0IAeIGSGkijIKwg0ED0Q4SGLSKVMGlMRWBQQB0hECIao4giG9I8qHSiFMYJhhgYggR9WUcEklBBNgdijBmeyCgMMpv/JBlStIPjQVQjoURBzIGgMVOFPQ0yynKb0xCLvuBJVqnALJgrEG5YgnQ0Ax5BV5NMKAvmRBhohD4K4Y0v5bACsllkVGfxSINnojQiacRAf/ogVEEnKUlL5FIxUwwtW+cAKrGKCAC2EEw74EQdDSpUl9CIhlYjTj4jwjIMkgQQyqAoEdtACqrhhHgi5B8sa8ALhPGQvAggLX8jyEXA04Uypkcg6OtGFNIiipAPJgR280ZBfNIILYtCD8ggVI3wwYxR8KEMjYqHQhGCDFi+LSHLyMpBCkAYkM7TKDPrTn+5QdilfGUkmuBRXzr6GNtz8x2jAIxJi1MgqazTtZrqjm+5X1TYj88iCVRYQTtnWZU0XZC1GgoEqqmDgpb7lSv6CK5JY9LIBmeBHcrmyw+oiYiXH4AJVSJCk6Xp3Je3IRRswE4MojPG76E2vetfL3va6973wja983RsQADs=");
   padding: 25px 75px;
 }
-
-.hidden, a[href="index.php?action=tasklist&caller=menu"], a[href="index.php?action=taskout&caller=menu"], a[href="index.php?action=taskdone"], a[href="index.php?action=tasknew"], a[href="index.php?action=tasksearch"], a[href="index.php?action=notepad"] {
-  color: transparent;
+body.phptask .hidden, body.phptask a[href="index.php?action=tasklist&caller=menu"], body.phptask a[href="index.php?action=taskout&caller=menu"], body.phptask a[href="index.php?action=taskdone"], body.phptask a[href="index.php?action=tasknew"], body.phptask a[href="index.php?action=tasksearch"], body.phptask a[href="index.php?action=notepad"] {
+  color: transparent !important;
 }
-.hidden:hover, a[href="index.php?action=tasklist&caller=menu"]:hover, a[href="index.php?action=taskout&caller=menu"]:hover, a[href="index.php?action=taskdone"]:hover, a[href="index.php?action=tasknew"]:hover, a[href="index.php?action=tasksearch"]:hover, a[href="index.php?action=notepad"]:hover {
-  color: transparent;
+body.phptask .hidden:hover, body.phptask a[href="index.php?action=tasklist&caller=menu"]:hover, body.phptask a[href="index.php?action=taskout&caller=menu"]:hover, body.phptask a[href="index.php?action=taskdone"]:hover, body.phptask a[href="index.php?action=tasknew"]:hover, body.phptask a[href="index.php?action=tasksearch"]:hover, body.phptask a[href="index.php?action=notepad"]:hover {
+  color: transparent !important;
 }
-.hidden:hover::before, a[href="index.php?action=tasklist&caller=menu"]:hover::before, a[href="index.php?action=taskout&caller=menu"]:hover::before, a[href="index.php?action=taskdone"]:hover::before, a[href="index.php?action=tasknew"]:hover::before, a[href="index.php?action=tasksearch"]:hover::before, a[href="index.php?action=notepad"]:hover::before {
+body.phptask .hidden:hover::before, body.phptask a[href="index.php?action=tasklist&caller=menu"]:hover::before, body.phptask a[href="index.php?action=taskout&caller=menu"]:hover::before, body.phptask a[href="index.php?action=taskdone"]:hover::before, body.phptask a[href="index.php?action=tasknew"]:hover::before, body.phptask a[href="index.php?action=tasksearch"]:hover::before, body.phptask a[href="index.php?action=notepad"]:hover::before {
   text-decoration: underline;
 }
-.hidden::before, a[href="index.php?action=tasklist&caller=menu"]::before, a[href="index.php?action=taskout&caller=menu"]::before, a[href="index.php?action=taskdone"]::before, a[href="index.php?action=tasknew"]::before, a[href="index.php?action=tasksearch"]::before, a[href="index.php?action=notepad"]::before {
-  color: blue;
+body.phptask .hidden::before, body.phptask a[href="index.php?action=tasklist&caller=menu"]::before, body.phptask a[href="index.php?action=taskout&caller=menu"]::before, body.phptask a[href="index.php?action=taskdone"]::before, body.phptask a[href="index.php?action=tasknew"]::before, body.phptask a[href="index.php?action=tasksearch"]::before, body.phptask a[href="index.php?action=notepad"]::before {
+  color: #3a271f;
 }
-
-a[href="index.php?action=tasklist&caller=menu"]::before {
+body.phptask a[href="index.php?action=tasklist&caller=menu"]::before {
   content: "Aktualne Questy";
 }
-
-a[href="index.php?action=taskout&caller=menu"]::before {
+body.phptask a[href="index.php?action=taskout&caller=menu"]::before {
   content: "Moje Questy";
 }
-
-a[href="index.php?action=taskdone"]::before {
+body.phptask a[href="index.php?action=taskdone"]::before {
   content: "Ukończone Questy";
 }
-
-a[href="index.php?action=tasknew"]::before {
+body.phptask a[href="index.php?action=tasknew"]::before {
   content: "Rozpocznij Quest";
 }
-
-a[href="index.php?action=tasksearch"]::before {
+body.phptask a[href="index.php?action=tasksearch"]::before {
   content: "Zapytaj w tawernie";
 }
-
-a[href="index.php?action=notepad"]::before {
+body.phptask a[href="index.php?action=notepad"]::before {
   content: "Zwoje";
+}
+body.phptask .NavSelectedRound, body.phptask .Round {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA60lEQVRYw+WVIRLCMBBFXxgkhgMw2IJE1DAIToDqBXoAdB22U4nDVGB7hzpML0Dv0QMEVRGmDIVkyqaszMS8tz8/ioEmiiLddT7hx6OGIs/zHIC6rgHIskyGgenQ5EEQjDwD78jjOAagKAo1LgOfko8nA9+Sizag+1iyJZdvIE1TAJIkMe66IvfiFWiAqqoACMMQgKZpnJCLMfDxb+iK3Ksm7MyCqzaVm4HDeqEBlvOZQd6aKMuy7QltY0JeBlryzW4PwOlyfb5r/BWvGtMrAwbRcbsC4Hy79yXSNq9CjgHbXXrbA6pjh/9l4AHezHqpNCoeCQAAAABJRU5ErkJggg==");
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  width: 16px;
+  margin: 5px;
+  border-radius: 3px;
+}
+body.phptask table > tbody > tr:nth-child(1) > td > table {
+  color: #fff;
+}
+body.phptask table > tbody > tr:nth-child(1) > td > table a {
+  color: #fff !important;
+}
+body.phptask table > tbody > tr:nth-child(2) > td:first-child > table > tbody > tr > td,
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td,
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > table > tbody > tr > td,
+body.phptask .NavSelectedRound,
+body.phptask .NavSelected,
+body.phptask .ContentTable,
+body.phptask .ContentTableTL,
+body.phptask .ContentTableBL,
+body.phptask form[name="Criteria"] {
+  background-color: #e2cba2;
+}
+body.phptask table > tbody > tr:nth-child(2) > td:first-child > table > tbody > tr:first-child > td {
+  background-color: transparent;
+}
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > div > div > h3,
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > div > table > tbody > tr > td > table > tbody > tr:first-child > td {
+  background-color: #3a271f !important;
+  color: #fff;
+  padding: 5px;
+  font-weight: normal !important;
+}
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > div > div > h3 a,
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > div > table > tbody > tr > td > table > tbody > tr:first-child > td a {
+  color: #fff !important;
+}
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > table > tbody > tr > td > div {
+  background-color: transparent !important;
+}
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > div > table > tbody > tr > td > table {
+  background-image: none !important;
+  padding: 0 !important;
+}
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > div > table > tbody > tr > td > table > tbody > tr:nth-child(2) > td:first-child {
+  border: 3px solid #3a271f !important;
+}
+body.phptask table > tbody > tr:nth-child(2) > td > table > tbody > tr > td > div > table > tbody > tr > td > table a {
+  color: #fff !important;
+}
+body.phptask .Tasklist {
+  background-color: transparent;
+}
+body.phptask font h1 {
+  color: #000;
+}
+body.phptask form[name="taskedit"] font {
+  background-color: transparent !important;
+}
+body.phptask input, body.phptask textarea, body.phptask button, body.phptask select {
+  background-color: #e2cba2;
+  border: 1px solid #3a271f;
 }
